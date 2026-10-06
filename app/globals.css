@@ -1,13 +1,12 @@
 @import "tailwindcss";
-
 /* Tailwind v4 theme tokens. Change the palette here and everything follows. */
 @theme inline {
-  --color-forest-deep: #0a2620;
-  --color-forest: #0f3d33;
+  --color-navy-deep: #0b1f4a;
+  --color-navy: #163a7e;
   --color-marigold: #f2b632;
-  --color-bone: #f4f5f0;
-  --color-mist: #a9bdb5;
-  --color-line: #2b3a3f;
+  --color-frost: #f2f5fb;
+  --color-mist: #a8b8d8;
+  --color-line: #27478a;
 
   --font-display: var(--font-bricolage);
   --font-sans: var(--font-instrument);
@@ -32,5 +31,5 @@ html {
 
 ::selection {
   background: var(--color-marigold);
-  color: var(--color-forest-deep);
+  color: var(--color-navy-deep);
 }

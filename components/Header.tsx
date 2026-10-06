@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { navLinks } from "@/lib/content";
+import Image from "next/image";
 
 function Logo() {
-  // Placeholder mark. Replace with your real logo when you have one.
   return (
     <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
       <rect width="28" height="28" rx="7" className="fill-marigold" />
@@ -14,7 +14,7 @@ function Logo() {
         fill="none"
         strokeWidth="3"
         strokeLinecap="square"
-        className="stroke-forest-deep"
+        className="stroke-navy-deep"
       />
     </svg>
   );
@@ -78,11 +78,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled || open
-          ? "border-line bg-forest-deep/90 backdrop-blur-md"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${scrolled || open
+          ? "border-line bg-navy-deep/90 backdrop-blur-md"
           : "border-transparent"
-      }`}
+        }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a
@@ -91,7 +90,14 @@ export default function Header() {
           onClick={() => setOpen(false)}
           className="flex items-center gap-2.5 rounded-md"
         >
-          <Logo />
+          <Image
+            src="/images/logo.png"
+            alt=""
+            width={160}
+            height={40}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
           <span className="font-display text-lg font-semibold tracking-tight">
             Letano Tech
           </span>
@@ -106,9 +112,8 @@ export default function Header() {
                   <a
                     href={l.href}
                     aria-current={isActive ? "location" : undefined}
-                    className={`relative block rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                      isActive ? "text-bone" : "text-mist hover:text-bone"
-                    }`}
+                    className={`relative block rounded-md px-3 py-2 text-sm font-medium transition-colors ${isActive ? "text-frost" : "text-mist hover:text-frost"
+                      }`}
                   >
                     {l.label}
                     {isActive && (
@@ -127,7 +132,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="hidden rounded-md bg-marigold px-4 py-2 text-sm font-semibold text-forest-deep transition-colors hover:bg-bone md:inline-block"
+            className="hidden rounded-md bg-marigold px-4 py-2 text-sm font-semibold text-navy-deep transition-colors hover:bg-frost md:inline-block"
           >
             Book a call
           </a>
@@ -142,11 +147,11 @@ export default function Header() {
           >
             <span className="relative block h-3.5 w-5">
               <motion.span
-                className="absolute left-0 top-0 h-0.5 w-5 bg-bone"
+                className="absolute left-0 top-0 h-0.5 w-5 bg-frost"
                 animate={open ? { y: 6, rotate: 45 } : { y: 0, rotate: 0 }}
               />
               <motion.span
-                className="absolute bottom-0 left-0 h-0.5 w-5 bg-bone"
+                className="absolute bottom-0 left-0 h-0.5 w-5 bg-frost"
                 animate={open ? { y: -6, rotate: -45 } : { y: 0, rotate: 0 }}
               />
             </span>
@@ -162,7 +167,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="absolute inset-x-0 top-full h-[calc(100dvh-4rem)] overflow-y-auto bg-forest-deep px-5 pb-10 pt-4 md:hidden"
+            className="absolute inset-x-0 top-full h-[calc(100dvh-4rem)] overflow-y-auto bg-navy-deep px-5 pb-10 pt-4 md:hidden"
           >
             <nav aria-label="Mobile">
               <ul>
@@ -188,7 +193,7 @@ export default function Header() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-8 block rounded-md bg-marigold px-6 py-4 text-center text-base font-semibold text-forest-deep"
+              className="mt-8 block rounded-md bg-marigold px-6 py-4 text-center text-base font-semibold text-navy-deep"
             >
               Book a 30-minute call
             </a>
