@@ -5,8 +5,6 @@ import { motion, type Variants } from "framer-motion";
 import { hero } from "@/lib/content";
 import HeroInterface from "./Herointerface";
 
-// Text moves into place with a small slide, but never starts at opacity 0,
-// so the headline is painted immediately (good for Core Web Vitals and SEO).
 const list: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.08 } },
@@ -31,7 +29,7 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          quality={70}
+          quality={100}
           className="object-cover object-[62%_center]"
         />
 
