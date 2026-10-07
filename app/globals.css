@@ -37,3 +37,22 @@ html {
   background: var(--color-marigold);
   color: var(--color-navy-deep);
 }
+
+@keyframes faq-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+details[open] > .faq-answer {
+  animation: faq-reveal 0.25s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  details[open] > .faq-answer {
+    animation: none;
+  }
+}

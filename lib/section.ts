@@ -1,14 +1,3 @@
-// Copy for the Services and Why Us sections.
-// Edit text here, not inside the components.
-//
-// Writing pattern used on purpose (for Google and AI answer engines):
-//  - every block opens with a plain definition or direct answer of about 40-60 words
-//  - the business name "Letano Tech" appears inside each answer, so a quoted
-//    passage still makes sense when it is lifted out of the page
-//  - no invented statistics, ratings or testimonials
-//
-// Lines marked [CONFIRM] are claims about your business that only you can verify.
-
 export type IconName = "web" | "mobile" | "desktop" | "seo" | "it";
 
 export const servicesSection = {

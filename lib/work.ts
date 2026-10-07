@@ -1,9 +1,3 @@
-// Copy for the Work section. Edit text here, not inside the component.
-//
-// IMPORTANT: the three projects below are SAMPLES (placeholder: true).
-// Replace them with your real projects, then set placeholder to false.
-// Only write results you can prove. Leave out numbers you cannot back up.
-
 export type Project = {
   id: string;
   title: string;

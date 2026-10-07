@@ -1,6 +1,3 @@
-// Copy for the Process section. Edit text here, not inside the component.
-// Lines marked [CONFIRM] are promises only you can verify.
-
 export const processSection = {
   heading: "How a Letano Tech project works, from first call to launch",
   intro:

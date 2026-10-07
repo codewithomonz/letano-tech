@@ -1,6 +1,10 @@
 import { services, site } from "@/lib/content";
+import { contact, isFilled } from "@/lib/contact";
+
 
 // Structured data for Google and AI engines. Rendered on the server.
+// Email and phone are added automatically once you replace the placeholders
+// in lib/contact.ts. Use the same details as on your Google Business Profile.
 export default function JsonLd() {
   const data = {
     "@context": "https://schema.org",
@@ -25,6 +29,8 @@ export default function JsonLd() {
           addressCountry: site.country,
         },
         areaServed: "Worldwide",
+        ...(isFilled(contact.email) ? { email: contact.email } : {}),
+        ...(isFilled(contact.phone) ? { telephone: contact.phone } : {}),
         ...(site.sameAs.length > 0 ? { sameAs: site.sameAs } : {}),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
