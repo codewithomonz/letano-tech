@@ -12,6 +12,10 @@
   --font-sans: var(--font-instrument);
 }
 
+.on-light :focus-visible {
+  outline-color: var(--color-navy);
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem; /* keeps anchored sections clear of the fixed header */

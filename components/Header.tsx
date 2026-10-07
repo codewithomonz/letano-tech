@@ -5,21 +5,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { navLinks } from "@/lib/content";
 import Image from "next/image";
 
-function Logo() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true">
-      <rect width="28" height="28" rx="7" className="fill-marigold" />
-      <path
-        d="M9 7v14h10"
-        fill="none"
-        strokeWidth="3"
-        strokeLinecap="square"
-        className="stroke-navy-deep"
-      />
-    </svg>
-  );
-}
-
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -35,15 +20,21 @@ export default function Header() {
 
   // Highlight the nav link of the section currently in view.
   useEffect(() => {
-    const ids = ["top", ...navLinks.map((l) => l.href.slice(1))];
+    const ids = ["top", "why-us", ...navLinks.map((l) => l.href.slice(1))];
     const els = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
 
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id === "top" ? "" : e.target.id);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(
+              entry.target.id === "top" || entry.target.id === "why-us"
+                ? ""
+                : entry.target.id,
+            );
+          }
         });
       },
       { rootMargin: "-45% 0px -50% 0px" },
@@ -75,6 +66,7 @@ export default function Header() {
       mq.removeEventListener("change", onChange);
     };
   }, [open]);
+
 
   return (
     <header

@@ -8,13 +8,6 @@ import {
   useReducedMotion,
 } from "framer-motion";
 
-/**
- * One sample product (a small bakery's order manager) that changes shape between
- * a browser, a phone and a desktop window. It is decorative and labelled
- * "Sample interface". All sizes inside the screens use `em`, and the root font
- * size follows the stage width, so it scales cleanly from phone to desktop.
- */
-
 type Mode = "web" | "mobile" | "desktop";
 type Status = "Paid" | "Pending" | "Delivered";
 
@@ -275,7 +268,7 @@ export default function HeroInterface() {
       <div
         role="img"
         aria-label={`Sample order-management app shown as a ${current.label.toLowerCase()} app`}
-        className="@container relative aspect-[5/4] w-full overflow-hidden rounded-2xl border border-line bg-navy sm:aspect-[4/3]"
+        className="@container relative aspect-5/4 w-full overflow-hidden rounded-2xl border border-line bg-navy sm:aspect-4/3"
       >
         <div
           className="absolute inset-0 flex items-center justify-center"

@@ -1,10 +1,13 @@
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import WhyUs from "@/components/WhyUs";
 
 export default function Home() {
   return (
     <main id="main">
       <Hero />
-      {/* Next sections go here, one at a time: Services, Why us, Work, Process, Pricing, FAQ, Contact */}
+      <Services />
+      <WhyUs />
     </main>
   );
 }
